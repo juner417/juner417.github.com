@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title: Site Title
+title: 'Juner'
 locale: en_US
-description: Describe your website here.
+description: 'Stay cool'
 logo: site-logo.png
 search: true
-url: http://localhost:4000
+url: http://juner417.github.io
 
 # Jekyll configuration
 
@@ -36,15 +36,15 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: juner
   avatar: bio-photo.jpg
-  email: you@email.com
-  disqus-shortname:
+  email: juner84s@gmail.com
+  disqus-shortname: juner417
   twitter: #username
   facebook: #username
-  github: #username
+  github: 'juner417'
   stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
+  linkedin: 'juner-son-31888861'
   instagram: #username
   flickr: #username
   tumblr: #username
@@ -52,7 +52,7 @@ owner:
   weibo: #userid
   google:
     plus: #username
-    analytics:
+    analytics: 'UA-92223343-1'
     verify:
     ad-client:
     ad-slot:
