@@ -9,11 +9,10 @@ image:
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
-<p>Hey, It's me juner</p>
 <p>Welcome to my blog</p>
 I'm gonna posting about myself
 
-You can comment for all posts, whenever you want
+You can comment for all posts, Whenever you want
 
 ## Cotains about
 

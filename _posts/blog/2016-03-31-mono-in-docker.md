@@ -5,6 +5,11 @@ date: 2016-03-31 01:00:00
 categories: blog
 author: juner
 tags: container
+image:
+  feature: so-simple-sample-image-7.jpg
+  credit: WeGraphics
+  #creditlink: 
+share: true
 comments: true
 ---
 [how to run mono in docker container(Ref link)](http://dotnetliberty.com/index.php/2015/10/04/mono-and-c-sharp-on-docker-hello-world-in-15-steps/)

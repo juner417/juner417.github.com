@@ -19,16 +19,16 @@ sed로 텍스트 편집하기
 </br>
 
 ## 사용 문법
-```bash
+{% highlight bash %}
 sed 'command' [filename]
 
 sed s/regular_expression/replacement_String/flags input_file
-```
+{% endhighlight %}
 
 ### ex)
-```bash
+{% highlight bash %}
 sed s/file_nmae/file_name/ > filename.txt
-```
+{% endhighlight %}
 
 ## sed 명령어들
 - d : 행 삭제
@@ -45,16 +45,16 @@ sed s/file_nmae/file_name/ > filename.txt
 
 ### s - 검색 & 치환
 s는 검색과 치환을 수행한다는 뜻이다. 슬래시(/)로 검색하고 치환할 정규 표현식을 지정한다.
-```bash
+{% highlight bash %}
 ex) sed s/filename/filename.txt/ filename.txt
 #filename.txt에 있는 filename이란 스트링을 filename.txt로 치환한다.  
-```
+{% endhighlight %}
 ### \ -역슬래시
 역슬래시(\\)는 이스케이프 문자라고 부르는데 (\\) 다음에 오는 문자는 정규표현식으로 해석하지 않는다.  
 결국 스트링에 특수기호가 포함되어 있을때 \를 사용한다.
-```bash
+{% highlight bash %}
 ex) sed s/\$FL/\$FILELIST/ filename.txt
-```
+{% endhighlight %}
 
 ### 한행에 여러번 나오는 문자열 교체하기 (flag : g)
 sed는 행단위 편집기로, 행을 한번에 하나씩 메모리로 읽은 후 한단위로 처리한다.
@@ -69,47 +69,47 @@ sed를 실행할 때는 이 사실을 명심해야한다. 모든 명령행 옵�
  - project : ok
 
 위에 내용에서 project를 project_name로 바꾸고 싶다면
-```bash
+{% highlight bash %}
 sed s/project/project_name/ prj.txt
-```
+{% endhighlight %}
 
 그러나 두번째 둘의 콤마(,)뒤의 project는 바뀌지 않은것을 볼수 있을 것이다.
 
 그래서 다음과 같이 g flag(global)를 이용한다.
-```
+{% highlight bash %}
 sed s/project/project_name/g prj.txt
-```
+{% endhighlight %}
 
 ### 선행검색
 s앞에 /string/을 사용하면 선행검색이 가능하다
 
-```bash
+{% highlight bash %}
 ex) sed /okplayers/s/players :/artist :/ playerlists.txt
 # okplayers가 있는 줄을 찾아 players :를 artist :로 바꾸어라
-```
+{% endhighlight %}
 
 ### 콜론(:)으로 끝나는 문자열 모두 변경하기
 정규표현식을 이용한 sed 활용법
 
-```bash
+{% highlight bash %}
 filename:$FLN
 system "echo project:$project"
 system "echo version:$version"
-```
+{% endhighlight %}
 
 위의 문자에서 :으로 끝나는 문자열을 모두 변경하여 보자!!!
-```bash
+{% highlight bash %}
 sed s/[a-z]*:/value:/g system.txt
-```
+{% endhighlight %}
 
 변경된 내용은 다음과 같다
-```bash
+{% highlight bash %}
 value:$FLN
 system "echo value:$project"
 system "echo value:$version"
-```
+{% endhighlight %}
 
-그러나!! 이것보다 더 좋은 것이 있었으니,
+그러나 이것보다 더 좋은 것이 있었으니,
 
 일정 형식의 string에 앞에 어떤 단어를 추가 하고 싶을 때
 
@@ -117,21 +117,21 @@ system "echo value:$version"
 
 ### 앰퍼센트(&)
 위의 내용에서 각각의 콜론 앞 스트링에 new_를 붙이고 싶다면
-```bash
+{% highlight bash %}
 filename:$FLN
 system "echo project:$project"
 system "echo version:$version"
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 sed s/[a-z]*:/new_\&/g system.txt
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 new_filename:$FLN
 system "echo new_project:$project"
 system "echo new_version:$version" 이렇게 됨 ㅎㅎ
-```
+{% endhighlight %}
 
 
 <출처>
