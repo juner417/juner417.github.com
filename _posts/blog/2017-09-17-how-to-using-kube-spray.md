@@ -1,22 +1,23 @@
 ---
 layout: post
-title: "how to using kube-spray"
+title: "How to using kube-spray"
 date: 2017-09-17 01:00:00
 categories: blog
+author: juner
 tags: [kubernetes]
 comments: true
 ---
 [kubespray github](https://github.com/kubernetes-incubator/kubespray.git)
 
 ## Advantages
-- available for aws, ace, azure, openstack or bare metal 
+- available for aws, ace, azure, openstack or bare metal
 - available HA cluster
 - can chose the network plugin
 - 인기있는 linux 배포판 지원
 
 
 ## requirements
-- Support OS : 
+- Support OS :
   - core os
   - debian jessie
   - ubuntu <= 16.04
@@ -33,7 +34,7 @@ comments: true
 - rat 1.21.0
 
 ## prerequisite - 필수조건
-- ansible은 2.3이상 
+- ansible은 2.3이상
 - python-netaddr은 설치되어있어야 함
 - ninja 2.9 이상 필요함
 - target server는 인터넷이 되고 ipv4 forwarding이 되어야 함
@@ -121,7 +122,7 @@ node4    ansible_host=host153 ip=172.10.30.153
 {% endhighlight %}
 
 
-## run cluster.yml playbook 
+## run cluster.yml playbook
 {% highlight bash %}
 $ ansible-playbook -i myinventory/inventory.cfg cluster.yml -b -v --private-key=~/k8s-dev.pem
 ...
@@ -176,5 +177,3 @@ kube-system   nginx-proxy-ip-host183               1/1       Running   1        
 단점
 - 아직 인큐베이팅 프로젝트이므로 어떻게 될지 모름
 - 우리에 맞게 사용하려면 수정이 필요할 것으로 예상됨
-       
-

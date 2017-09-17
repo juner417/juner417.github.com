@@ -3,6 +3,7 @@ layout: post
 title: "mono in docker container"
 date: 2016-03-31 01:00:00
 categories: blog
+author: juner
 tags: container
 comments: true
 ---
