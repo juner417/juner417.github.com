@@ -37,7 +37,7 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 # Site owner
 owner:
   name: juner
-  avatar: bio-photo.jpg
+  avatar: itsme.jpg
   email: juner84s@gmail.com
   disqus-shortname: juner417
   twitter: #username

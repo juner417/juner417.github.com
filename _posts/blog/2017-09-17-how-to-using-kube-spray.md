@@ -5,6 +5,11 @@ date: 2017-09-17 01:00:00
 categories: blog
 author: juner
 tags: [kubernetes]
+image:
+  feature: so-simple-sample-image-7.jpg
+  credit: WeGraphics
+  #creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+share: true
 comments: true
 ---
 [kubespray github](https://github.com/kubernetes-incubator/kubespray.git)
