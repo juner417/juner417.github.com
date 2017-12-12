@@ -1,3 +1,18 @@
+---
+layout: post
+title: "Kubecon + CloudNative con 2017 review"
+date: 2017-12-12 22:00:00
+categories: blog
+author: juner
+tags: [kubernetes]
+image:
+  feature: so-simple-sample-image-7.jpg
+  credit: WeGraphics
+  #creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+share: true
+comments: true
+---
+
 # kubecon + cloudnative con 2017
  - 내가 생각하는 Keyword
 
