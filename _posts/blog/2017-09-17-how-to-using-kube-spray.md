@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to using kube-spray"
+title: "How to using kubespray"
 date: 2017-09-17 01:00:00
 categories: blog
 author: juner
