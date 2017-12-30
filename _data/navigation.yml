@@ -3,14 +3,18 @@
 - title: About
   url: /about/
 
-- title: Articles
-  url: /articles/
+# don't need articles
+#- title: Articles
+#  url: /articles/
 
 - title: Blog
   url: /blog/
 
 - title: tags
   url: /tags/
+
+- title: Steemit
+  url: https://steemit.com/@juner417
 
 - title: Search
   url: /search/

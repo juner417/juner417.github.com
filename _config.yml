@@ -3,7 +3,8 @@
 title: 'Juner'
 locale: en_US
 description: 'Stay cool'
-logo: site-logo.png
+#logo: site-logo.png
+logo: 
 search: true
 url: https://juner417.github.io
 

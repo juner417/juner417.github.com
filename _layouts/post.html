@@ -50,6 +50,11 @@
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
+      <h1>Recent Posts</h1>
+      {% for post in site.posts offset:1 limit:2 %}
+        <p><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+      {% endfor %}
+
       {% if page.previous %}
         <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous</a>
       {% endif %}
