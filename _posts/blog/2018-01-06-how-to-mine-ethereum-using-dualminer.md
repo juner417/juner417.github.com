@@ -62,6 +62,7 @@ comments: true
  - 가입 후 자신의 계정으로 로그인>정보수정>OTP활성화 후 google OTP등록을 해야 함     
  ![signup]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-ethereum-using-dualminer/signup_MPH.PNG)    
 
+
 ### 3. 이더리움 마이너 추가 
  - 왼쪽 메뉴에 이더리움풀로 가서 ethereum 풀 클릭 > 마이너 클릭    
  ![MPH]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-ethereum-using-dualminer/ether_pool.png)      
