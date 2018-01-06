@@ -61,37 +61,37 @@ comments: true
  
 ### 2. 자신이 원하는 풀에 가입하기(마이닝풀허브)
  - 가입(메일 인증이 필요함)
- - 가입 후 자신의 계정으로 로그인>정보수정>OTP활성화 후 google OTP등록을 해야 함
- ![signup](../images/2018-01-06-how-to-mine-monero-using-ccminer/signup_MPH.PNG)   
+ - 가입 후 자신의 계정으로 로그인>정보수정>OTP활성화 후 google OTP등록을 해야 함   
+ ![signup]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/signup_MPH.PNG)   
 
 ### 3. 모네로 마이너 추가 
- - 왼쪽 메뉴에 모네로풀로 가서 monero 풀 클릭 > 마이너 클릭
- ![MPH](../images/2018-01-06-how-to-mine-monero-using-ccminer/MPH_monero.png)   
+ - 왼쪽 메뉴에 모네로풀로 가서 monero 풀 클릭 > 마이너 클릭   
+ ![MPH]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/MPH_monero.png)     
 
  - 마이너 추가 메뉴에서 마이너 이름, 암호 입력 후 마이너 추가(입력한 마이너 정보가 ccminer 실행 스크립트에 들어감, 마이너 비밀번호는 딱히 중요하지 않으므로 x)  
  - 모니터 항목 on 으로 변경 후 마이너 업데이트 클릭
- - monero 풀 대시보드로 이동(아직 마이너 실행을 안했으므로 속도도 0이고 적립도 0이다. 화면은 내가 나중에 캡쳐해서 숫자가 나와있음)  
- ![woker](../images/2018-01-06-how-to-mine-monero-using-ccminer/miner_applying.PNG)    
+ - monero 풀 대시보드로 이동(아직 마이너 실행을 안했으므로 속도도 0이고 적립도 0이다. 화면은 내가 나중에 캡쳐해서 숫자가 나와있음)    
+ ![woker]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/miner_applying.PNG)      
 
 
 ### 4. afterburner 설정
- - step1에서 설치한 afterburner 실행 후 위에서 말한 대로 설정해 줌(gigabyte gtx 1060 6GB) power limit 80% / core clock -60 MHz / Memory 700MHz 로 지정)
- ![setting afterburner](../images/2018-01-06-how-to-mine-monero-using-ccminer/afterburner_setting.PNG)
+ - step1에서 설치한 afterburner 실행 후 위에서 말한 대로 설정해 줌(gigabyte gtx 1060 6GB) power limit 80% / core clock -60 MHz / Memory 700MHz 로 지정)  
+ ![setting afterburner]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/afterburner_setting.PNG)  
 
 ### 5. ccminer실행
- - step1에서 압축 푼 ccminer 위치로 이동 
- ![run miner](../images/2018-01-06-how-to-mine-monero-using-ccminer/before_running_ccminer.PNG)
+ - step1에서 압축 푼 ccminer 위치로 이동   
+ ![run miner]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/before_running_ccminer.PNG)
    
  - notepad로 start.bat 파일을 ccminer-x64 바이너리가 있는 곳에 만들어 아래의 내용을 입력 후 저장한다.(상세 옵션은 README 파일 참조) 
  ```
 ccminer-x64 -a cryptonight -o stratum+tcp://asia.cryptonight-hub.miningpoolhub.com:20580 -u 풀계정.마이너이름 -p x
 pause
  ```
- - 저장한 start.bat를 실행한다. 
- ![run miner](../images/2018-01-06-how-to-mine-monero-using-ccminer/running_ccminer.PNG)    
- - 마이닝 시작! - 약 5분뒤 monero 풀 대쉬보드로 이동하면 해시파워와 적립된 코인을 볼수 있다.(대략 511H/s가 나오는데 이더보다 낮아서 이상하다 생각했지만, 채산성은 조금 낫더라...)
- ![dashboard](../images/2018-01-06-how-to-mine-monero-using-ccminer/running_ccminer.PNG)
- ![dashboard](../images/2018-01-06-how-to-mine-monero-using-ccminer/after_running_ccminer.PNG)
+ - 저장한 start.bat를 실행한다.   
+ ![run miner]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/running_ccminer.PNG)      
+ - 마이닝 시작! - 약 5분뒤 monero 풀 대쉬보드로 이동하면 해시파워와 적립된 코인을 볼수 있다.(대략 511H/s가 나오는데 이더보다 낮아서 이상하다 생각했지만, 채산성은 조금 낫더라...)  
+ ![dashboard]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/running_ccminer.PNG)    
+ ![dashboard]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-monero-using-ccminer/after_running_ccminer.PNG)
      
 ## 결론
  - ccminer상에는 대략 66wh라고 나오는데 믿을수가 없으므로 계량기 확인 필요
