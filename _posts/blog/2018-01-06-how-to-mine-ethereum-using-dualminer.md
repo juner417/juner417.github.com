@@ -83,13 +83,15 @@ comments: true
    
  - notepad로 start.bat 파일을 ccminer-x64 바이너리가 있는 곳에 만들어 아래의 내용을 입력 후 저장한다.(상세 옵션은 README 파일 참조) 
  ```
- # single mining(only ethereum)
- EthDcrMiner64.exe -allpools 1 -epool asia1.ethereum.miningpoolhub.com:20535 -ewal 풀계정.마이너이름 -epsw x -esm 2
+# single mining(only ethereum)
+
+EthDcrMiner64.exe -allpools 1 -epool asia1.ethereum.miningpoolhub.com:20535 -ewal 풀계정.마이너이름 -epsw x -esm 2
 pause
  ```
  ```
- # dual mining(ethereum, siacoin)
- EthDcrMiner64.exe -epool asia.ethash-hub.miningpoolhub.com:20535 -ewal 풀계정.마이너이름 -eworker 풀계정.마이너이름 -esm 2 -epsw x -dpool stratum+tcp://hub.miningpoolhub.com:20550 -dwal 풀계정.마이너이름 -dpsw x -dcoin sc
+# dual mining(ethereum, siacoin)
+
+EthDcrMiner64.exe -epool asia.ethash-hub.miningpoolhub.com:20535 -ewal 풀계정.마이너이름 -eworker 풀계정.마이너이름 -esm 2 -epsw x -dpool stratum+tcp://hub.miningpoolhub.com:20550 -dwal 풀계정.마이너이름 -dpsw x -dcoin sc
  ```
  - 저장한 start.bat를 실행한다.     
  ![run miner]({{ site.url }}/assets/post_images/2018-01-06-how-to-mine-ethereum-using-dualminer/ether_run_bat.PNG)    
