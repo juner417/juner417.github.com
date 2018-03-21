@@ -32,10 +32,10 @@ comments: true
 - 마지막 복구 테스트는 live cluster 데이터 기준
 
 ## 출처
-[etcd v2 backup and restore](https://github.com/coreos/etcd/blob/master/Documentation/v2/admin_guide.md#disaster-recovery)
-[etcd v3 backup and restore](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/recovery.md)
-[etcd tip](https://www.mirantis.com/blog/everything-you-ever-wanted-to-know-about-using-etcd-with-kubernetes-v1-6-but-were-afraid-to-ask/)
-[etcd admin guide](https://coreos.com/etcd/docs/latest/v2/admin_guide.html)
+[etcd v2 backup and restore](https://github.com/coreos/etcd/blob/master/Documentation/v2/admin_guide.md#disaster-recovery)  
+[etcd v3 backup and restore](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/recovery.md)  
+[etcd tip](https://www.mirantis.com/blog/everything-you-ever-wanted-to-know-about-using-etcd-with-kubernetes-v1-6-but-were-afraid-to-ask/)  
+[etcd admin guide](https://coreos.com/etcd/docs/latest/v2/admin_guide.html)  
 
 ## 테스트 준비
 ---  
@@ -346,8 +346,8 @@ v2 wc -l : 7
 v3 wc -l : 270
 ```   
  > 둘다 살아남…   
- 하지만 아래의 github 이슈를 확인해 보니 정확히 backup data 를 가지고 한것이 아니라는 코멘트가 있음 추가 테스트 필요 (wal파일에 저장된 v3 데이터가 복구된것이라고 이야기 함, 이것은 backup 데이터가 아니다.)
- [github issue link](https://github.com/coreos/etcd/issues/7002)  
+ 하지만 아래의 github 이슈를 확인해 보니 정확히 backup data 를 가지고 한것이 아니라는 코멘트가 있음 추가 테스트 필요 (wal파일에 저장된 v3 데이터가 복구된것이라고 이야기 함, 이것은 backup 데이터가 아니다.)  
+ [github issue link](https://github.com/coreos/etcd/issues/7002)    
 
 
 #### 3. 나머지 노드 등록하기
