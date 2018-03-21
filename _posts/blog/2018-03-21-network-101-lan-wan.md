@@ -26,12 +26,12 @@ comments: true
  - 서로 다른 네트워크를 연결하기 위해 L3 switch(router)를 이용한 구성이 대표적임
 
 ## LAN/WAN 구성
-![lan-wan](./lan-wan.png)     
+![lan-wan]({{ site.url }}/assets/post_images/2018-03-21-network-101-lan-wan/lan-wan.png)     
 > L2 switch로 연결된 구간이 LAN  
 > L3 router로 연결된 구간이 WAN
 
 ## TCP/IP
-- TCP/IP란 프로토콜이다. [OSI 7 Layer 참조]()
+- TCP/IP란 프로토콜이다. [OSI 7 Layer 참조]({{ site.url }}/blog/network-101-osi-7-layer/)
 - TCP(Transmission Cotrole Protocol)는 데이터의 확인이나 재전송등을 수행하며 신뢰도가 높은 연결형 통신을 구현하는 프로토콜로 L4 transport 레이어의 대표적인 프로토콜이다.  
 - IP(Internet Protocol)는 인터넷상에 있는 개별 네트워크끼리 패킷을 라우팅하는 프로토콜이다. 이 프로토콜을 이용하여 다른 네트워크에 있는 컴퓨터와 통신할 수 있다. L3 network 레이어의 대표 프로토콜이다. 
 
