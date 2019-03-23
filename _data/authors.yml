@@ -1,12 +1,22 @@
-# Authors
+# Sample Authors
+# Remove file or replace with your own
+
+#Billy Rick:
+#  name: Billy Rick
+#  picture: /images/bio-photo-2.jpg
+#  twitter: "@billyrick"
+#  links:
+#    - title: Twitter
+#      url: https://twitter.com/billyrick
+#      icon: fab fa-twitter-square
 
 juner:
-  name: Junho Son
-  web: https://juner417.github.io
-  email: juner84s@gmail.com
-  bio: "Salut!"
-  avatar: itsme.jpg 
-  twitter: 
-  google:
-    plus: 
-
+  name: juner
+  picture: /images/itsme.jpg
+  links:
+    - title: GitHub
+      url: 'https://github.com/juner417'
+      icon: fab fa-github-square
+    - title: LinkedIn
+      url: 'https://www.linkedin.com/in/juner-son-31888861/'
+      icon: fab fa-linkedin
