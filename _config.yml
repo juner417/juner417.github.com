@@ -1,25 +1,55 @@
 # Site wide configuration
+remote_theme: "mmistakes/so-simple-theme"
 
 title: 'Juner'
 locale: en_US
 description: 'Stay cool'
-#logo: site-logo.png
-logo: 
 search: true
 url: https://juner417.github.io
+date_format: "%Y-%m-%d"
+
+google_fonts:
+#  - name: "Source Sans Pro"
+#    weights: "400,600"
+  - name: "Ubuntu Mono"
+    weights: "400,600"
 
 # Jekyll configuration
 
 permalink:   /:categories/:title/
 markdown:    kramdown
+feed:
+  path: atom.xml
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+paginate: 10
+paginate_path: /page:num/
+# Search
+search_full_content: true
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+
+# Front Matter Defaults
+defaults:
+  # Post defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
+
 highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
+plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
+  - jekyll-paginate
 
 kramdown:
   input: GFM
@@ -31,30 +61,22 @@ kramdown:
 
 mathjax: false
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+#include: [".htaccess"]
+#exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
+google_analytics: "UA-92223343-1"
+disqus:
+  shortname: "juner417"
 
 # Site owner
-owner:
+author:
   name: juner
-  avatar: itsme.jpg
+  picture: itsme.jpg
   email: juner84s@gmail.com
-  disqus-shortname: juner417
-  twitter: #username
-  facebook: #username
-  github: 'juner417'
-  stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: 'juner-son-31888861'
-  instagram: #username
-  flickr: #username
-  tumblr: #username
-  pinterest: #username
-  weibo: #userid
-  google:
-    plus: #username
-    analytics: 'UA-92223343-1'
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
+  links:
+    - title: GitHub
+      url: 'https://github.com/juner417'
+      icon: fab fa-github-square
+    - title: LinkedIn
+      url: 'https://www.linkedin.com/in/juner-son-31888861/'
+      icon: fab fa-linkedin-square
