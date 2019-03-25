@@ -11,7 +11,8 @@ comments: true
 
 ## Summary
 ### 목적
- - etcd v2, v3의 backup, restore의 차이가 있음, 우리는 두 버전 모두 사용하고 있어서 모두 복구를 해야함. 테스트 필요
+ - etcd v2, v3의 backup, restore의 차이가 있음, 우리는 두 버전 모두 사용하고 있어서 모두 복구를 해야함. 테스트 필요  
+
 ### 테스트 방식
  - kubernetes cluster 생성 후 etcd data backup(v2, v3)
  - etcd v2, v3의 backup data 를 가지고 restore를 했을 때, 두 버전의 저장된 key store가 모두 복구 가능한지 확인

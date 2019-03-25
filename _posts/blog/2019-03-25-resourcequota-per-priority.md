@@ -26,7 +26,8 @@ comments: true
 * 20억~10억 사이의 값은 일반적으로 선점(preempttion)되거나 제거 되지 않아야 하는 중요한 시스템 pod을 위해 사용됨. 
 * priorityclass는 globalDefault 필드를 갖는데, 이것은 priorityClassName이 지정안된 pod에 사용여부를 나타냄.(true인것은 시스템에 하나만 존재할 수 있음.)
 * globalDefault가 설정된 PriorityClass가 없으면 priorityclassname이 지정되지 않은 pod은 priority가 0
-* [상세내용](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass)
+* [상세내용](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass)  
+
 ```bash
 $ cat priorityclass-for-gurantted.yml
 ---
@@ -65,6 +66,7 @@ system-node-critical      2000001000   false            23d
 * pod은 priorityclass를 이용하여 specific priority로 생성될수 있다.
 * priority adminssion controller는 priorityClassName필드를 이용하고 priority의 정수 값을 이용한다. 
 * 만약 지정한 priority class가 없으면 pod은 리젝된다. 
+
 ```bash
 apiVersion: v1
 kind: Pod
@@ -95,7 +97,8 @@ spec:
 * Quota spec에 scopeSelector를 지정할 경우, 지정한 quota와 일치되고 사용됩니다.
 * Feature gate 에 ResourceQuotaScopeSelectors기능을 추가(1.12 이전 버전의 경우)해야 사용가능하다.
 * pod에서는 priority class로 scopeSelector와 일치하는 것을 지정한다.
-* pritority class 의 value는 32bit 정수값보다 작겨나(21억), 10억과 동일한 값을 가질수 있다. 
+* pritority class 의 value는 32bit 정수값보다 작겨나(21억), 10억과 동일한 값을 가질수 있다.   
+
 ```bash
 # namespace and quota per priorityclass
 $ cat namespace-quota.yaml
@@ -201,7 +204,7 @@ spec:
             memory: "1Gi"
       priorityClassName: bustable
 ```
-
+   
 ```bash
 $ kc create -f namespace-quota.yaml
 $ kc create -f test-deployment-guaranteed.yaml
@@ -239,6 +242,7 @@ pod/nginx-deployment-on-guaranteed-768b9dbd59-ms2dp   1/1     Running   0       
 
 ```
 
+  
 ```bash
 # pod 상태 확인 
 ## guaranteed
