@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "kubeadm join issue - cannot get configmap in namespace"
+title: "kubeadm join cannot get configmap in namespace"
 date: 2019-03-25 19:00:00
 categories: blog
 author: juner
 tags: [kubernetes, lessons-learned]
 comments: true
 ---
-# kubernetes lessons-learned - kubeadm join error
-## system:bootstrap cannot get configmap
+# kubernetes lessons-learned 
+## kubeadm join error - system:bootstrap cannot get configmap
 
 ### Issue
 * v1.5부터 업그레이드 해서 사용한 kubernetes cluster(kubeadm으로 설치)
@@ -27,12 +27,12 @@ $ kubeadm join --discovery-token-unsafe-skip-ca-verification --token ***********
 ```
 
 ### cause
-* kubeadm이 1.11로 버전이 올라가면서 join시 bootstrap config를 configmap에 접근하여 가져오기 위해 createConfigMapRBACRules 함수가 추가됨[코드참고](https://github.com/kubernetes/kubernetes/blob/716b25396305b97034b019c13a937fcdfd364f9c/cmd/kubeadm/app/phases/kubelet/config.go#L88
+* kubeadm이 1.11로 버전이 올라가면서 join시 bootstrap config를 configmap에 접근하여 가져오기 위해 createConfigMapRBACRules 함수가 추가됨 [코드참고](https://github.com/kubernetes/kubernetes/blob/716b25396305b97034b019c13a937fcdfd364f9c/cmd/kubeadm/app/phases/kubelet/config.go#L88
 )
 * 우리는 1.11이전 버전의 위 함수가 없는 kubeadm으로 init해서 kube-system namespace에 kubelet-bootstrap role과 rolebinding이 없어서 권한 문제 발생함
 
 ### solution
-* 아래의 내용으로 role, role-binding을 생성해 주니 문제 해결
+* 아래의 내용으로 role, role-binding을 생성해 주니 문제 해결   
 ```
 # role, rolebinding만들어줌
 cat <<EOF > kubelet-bootsrap-role.yaml
