@@ -33,6 +33,7 @@ $ kubeadm join --discovery-token-unsafe-skip-ca-verification --token ***********
 
 ### solution
 * 아래의 내용으로 role, role-binding을 생성해 주니 문제 해결   
+
 ```
 # role, rolebinding만들어줌
 cat <<EOF > kubelet-bootsrap-role.yaml
