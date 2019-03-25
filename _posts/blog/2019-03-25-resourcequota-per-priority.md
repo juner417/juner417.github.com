@@ -28,7 +28,7 @@ comments: true
 * globalDefault가 설정된 PriorityClass가 없으면 priorityclassname이 지정되지 않은 pod은 priority가 0
 * [상세내용](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass)  
 
-```bash
+```
 $ cat priorityclass-for-gurantted.yml
 ---
 apiVersion: v1
@@ -67,7 +67,7 @@ system-node-critical      2000001000   false            23d
 * priority adminssion controller는 priorityClassName필드를 이용하고 priority의 정수 값을 이용한다. 
 * 만약 지정한 priority class가 없으면 pod은 리젝된다. 
 
-```bash
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -99,7 +99,7 @@ spec:
 * pod에서는 priority class로 scopeSelector와 일치하는 것을 지정한다.
 * pritority class 의 value는 32bit 정수값보다 작겨나(21억), 10억과 동일한 값을 가질수 있다.   
 
-```bash
+```
 # namespace and quota per priorityclass
 $ cat namespace-quota.yaml
 ---
@@ -205,7 +205,7 @@ spec:
       priorityClassName: bustable
 ```
    
-```bash
+```
 $ kc create -f namespace-quota.yaml
 $ kc create -f test-deployment-guaranteed.yaml
 $ kc create -f test-deployment-bustable.yaml
@@ -243,7 +243,7 @@ pod/nginx-deployment-on-guaranteed-768b9dbd59-ms2dp   1/1     Running   0       
 ```
 
   
-```bash
+```
 # pod 상태 확인 
 ## guaranteed
 $ kc get pod/nginx-deployment-on-guaranteed-768b9dbd59-hsgf2 -n test-quota1 -o yaml
