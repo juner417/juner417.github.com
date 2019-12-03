@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Renewal k8s master component certificate"
-date: 2019-12-40 01:00:00
+date: 2019-12-04 01:00:00
 categories: blog
 author: juner
 tags: [kubernetes]
