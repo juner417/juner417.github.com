@@ -88,6 +88,7 @@ $ chown -R root:root pki # 혹시나 파일의 오너가 root가 아닐경우.
 ## kubadm(>v1.15)으로 controller-manager, scheduler client certification update하기
 * master cert를 cfssl, openssl을 이용하여 100년으로 만들어도 controller-manager, scheduler, etcd의 client cert가 100년짜리가 아니다
 * 이 경우 위 방식으로 하기에는 문제가 있다. 그래서 1.15 이상 버전의 cert renew 기능을 이용하자(client가 자신의 local cert만 변경)
+
 ```
 Dockerfile
 FROM ubuntu:18.04
@@ -99,12 +100,14 @@ COPY kubeadm /usr/bin/ # 여기서 kubeadm은 >v1.15 이상으로 받아둔다.
 ```
 
 ### build
+
 ```
 $ docker build -t registry/junho-son/kubeadm:v1.15.2 .
 $ docker push registry/junho-son/kubeadm:v1.15.2
 ```
 
 ### mount and renew
+
 ```
 $ docker run -V /etc/kubernetes:/etc/kubernetes registry/junho-son/kubeadm:v1.15.2 bash
 $ kubeadm alpha certs renew controller-manager.conf

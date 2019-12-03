@@ -18,6 +18,7 @@ comments: true
 
 ### Case1: Quota 사용시 resource limit 까지 Pod이 문제 없이 생성 되는가?
 #### scale out on limits
+
 ```
 ## deployment 확인
 watch -n 2 "kubectl describe quota -n test-quota1"
@@ -63,6 +64,7 @@ pods        5     10
 
 ### Case2: Quota 사용시 resource limit 넘어서는 Pod replica scale out이 들어올 경우
 #### scale out over limits
+
 ```
 ## scale out
 $ kc scale --replicas=20 deployment.extensions/nginx-deployment-on-bustable -n test-quota1
@@ -102,6 +104,7 @@ replicaset.extensions/nginx-deployment-on-guaranteed-85f6d7d97f   10        5   
 > deployment의 .spec은 바뀜
 
 * event, deployment .status.reason FailedCreate에 exceeded quota 메세지 남음
+
 ```
 ## describe deployment
 $ kc get deployment.extensions/nginx-deployment-on-bustable -o yaml -n test-quota1
@@ -273,6 +276,7 @@ status:
 ```
 
 * event log
+
 ```
 108s        Warning   FailedCreate        ReplicaSet   Error creating: pods "nginx-deployment-on-bustable-5cc9d55957-wr6ch" is forbidden: exceeded quota: pods-bustable, requested: cpu=1,memory=1Gi, used: cpu=10,memory=10Gi, limited: cpu=10,memory=10Gi
 108s        Warning   FailedCreate        ReplicaSet   Error creating: pods "nginx-deployment-on-bustable-5cc9d55957-cvgqc" is forbidden: exceeded quota: pods-bustable, requested: cpu=1,memory=1Gi, used: cpu=10,memory=10Gi, limited: cpu=10,memory=10Gi
@@ -299,6 +303,7 @@ status:
 ```
 
 * kube-controller-manager log
+
 ```
 kube-controller-manager- kube-controller-manager E0329 09:22:22.925523       1 replica_set.go:450] Sync "test-quota1/nginx-deployment-on-bustable-5cc9d55957" failed with pods "nginx-deployment-on-bustable-5cc9d55957-2fps4" is forbidden: exceeded quota: pods-bustable, requested: cpu=1,memory=1Gi, used: cpu=10,memory=10Gi, limited: cpu=10,memory=10Gi
 kube-controller-manager- kube-controller-manager I0329 09:22:22.925563       1 event.go:221] Event(v1.ObjectReference{Kind:"ReplicaSet", Namespace:"test-quota1", Name:"nginx-deployment-on-bustable-5cc9d55957", UID:"007c166b-5203-11e9-906b-fa165cc9a582", APIVersion:"apps/v1", ResourceVersion:"23042334", FieldPath:""}): type: 'Warning' reason: 'FailedCreate' Error creating: pods "nginx-deployment-on-bustable-5cc9d55957-2fps4" is forbidden: exceeded quota: pods-bustable, requested: cpu=1,memory=1Gi, used: cpu=10,memory=10Gi, limited: cpu=10,memory=10Gi
@@ -320,6 +325,7 @@ kube-controller-manager- kube-controller-manager I0329 09:23:10.337594       1 e
 
 ### Case3: limit에 걸려 더이상 생성이 안될때 quota 수정시 동작확인
 #### edit or patch quota
+
 ```
 ## edit quota
 $ kc edit quota/pods-bustable -n test-quota1
@@ -405,6 +411,7 @@ pod/nginx-deployment-on-guaranteed-85f6d7d97f-sfhh5   1/1     Running   0       
 pod/nginx-deployment-on-guaranteed-85f6d7d97f-t987m   1/1     Running   0          2m27s
 pod/nginx-deployment-on-guaranteed-85f6d7d97f-z4gcq   1/1     Running   0          2m27s
 ```
+
 #### 결과
 * quota를 증가 시켜도 안늘어남...
 * quota에 scopeSelector를 이용해서 priorityClass를 지정한것과 아닌것이 다르게 동작한다.(이거 좀 버그 같다...)
